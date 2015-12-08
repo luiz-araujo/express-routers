@@ -1,22 +1,22 @@
 {
-  "name": "express-routes",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "start": "nodemon --quiet app.js",
-    "test": "./node_modules/mocha/bin/_mocha test/e2e/*.spec.js"
-  },
-  "author": "Luiz Araujo",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.13.3"
-  },
-  "devDependencies": {
-    "chai": "^3.4.1",
-    "chai-things": "^0.2.0",
-    "mocha": "^2.3.4",
-    "supertest": "^1.1.0",
-    "things": "^1.1.0"
-  }
+	"name": "express-routes",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon --quiet app.js",
+		"test": "mocha test/e2e/*.spec.js"
+	},
+	"author": "Luiz Araujo",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.13.3"
+	},
+	"devDependencies": {
+		"chai": "^3.4.1",
+		"chai-things": "^0.2.0",
+		"mocha": "^2.3.4",
+		"supertest": "^1.1.0",
+		"things": "^1.1.0"
+	}
 }
