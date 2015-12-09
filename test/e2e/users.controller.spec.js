@@ -50,7 +50,7 @@ describe('Users controller', function(){
 	describe('.update - PUT /users/:id', function(){
 		it('should return a json array', function(done){
 			request(app)
-				.put('/api/users/?user=1')
+				.put('/api/users/1')
 				.end(function(err, res){
 					expect(res.statusCode).to.be.equal(200);
 					expect(res.body).to.be.an('object');
@@ -63,7 +63,7 @@ describe('Users controller', function(){
 	describe('.delete - DELETE /users/:id', function(){
 		it('should return a json array', function(done){
 			request(app)
-				.delete('/api/users/?user=1')
+				.delete('/api/users/1')
 				.end(function(err, res){
 					expect(res.statusCode).to.be.equal(200);
 					expect(res.body).to.be.an('object');

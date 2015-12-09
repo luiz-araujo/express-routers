@@ -1,15 +1,23 @@
 'use strict';
 
-var express = require('express');
-var app = express();
-var routers = require('./routers/index.js');
+let express = require('express');
+let app = express();
+let routers = require('./routers/index.js');
+let config = require('./config.js');
+let mongoose = require('mongoose');
 
 app.use('/api', routers.api);
 
-app.listen(3000, serverLogInit);
+let urlDatabase = `mongodb://${config.db.host}/${config.db.name}`;
 
-function serverLogInit(){
-	console.log('> localhost:3000');
-};
+mongoose.connect(urlDatabase);
+
+mongoose.connection.on('error', function(){
+	console.log('database connection error');
+});
+
+mongoose.connection.once('open', function(){
+	app.listen(3000, () => console.log('> localhost:3000'));
+});
 
 module.exports = app;
